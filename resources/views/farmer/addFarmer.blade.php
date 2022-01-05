@@ -96,7 +96,7 @@
                                         <!--begin::Input-->
                                         <div class="form-group">
                                             <label >رقم البطاقة  <span style="color: #ec0c24">*</span> </label>
-                                            <input type="text" value="{{random_int(1, 2000)}}" readonly class="form-control" name="cardNumber" id="cardNumber" placeholder=""  />
+                                            <input type="text" value="{{$cardNumberg}}" readonly class="form-control" name="cardNumber" id="cardNumber" placeholder=""  />
 
                                         </div>
                                         <!--end::Input-->

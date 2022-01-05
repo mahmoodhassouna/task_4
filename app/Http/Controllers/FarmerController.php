@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Helpers\Helper;
 use App\Models\Application;
 use App\Models\CustomLog;
 use App\Models\Permanentworker;
@@ -37,12 +38,15 @@ class FarmerController extends Controller
 
     public function index()
     {
-      $regions = Region::all();
-      $governorate = Governorate::all();
-      return view('farmer.addFarmer',[
-          'regions'=>$regions,
-          'governorate'=>$governorate
-      ]);
+        $regions = Region::all();
+        $governorate = Governorate::all();
+          $cardNumberg = Helper::IDGenerator(new Farmer(), 'cardNumber' ,5 ,'');
+  
+          return view('farmer.addFarmer',[
+            'regions'=>$regions,
+            'governorate'=>$governorate,
+              'cardNumberg'=>$cardNumberg,
+        ]);
     }
 
     public function archiveFarmers(){
