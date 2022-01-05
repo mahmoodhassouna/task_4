@@ -713,6 +713,38 @@
         lands();
         pworkers();
 
+        function getAge() {
+            var dateString = document.getElementById("birthDate").value;
+            if(dateString !="")
+            {
+                var today = new Date();
+                var birthDate = new Date(dateString);
+                var age = today.getFullYear() - birthDate.getFullYear();
+                var m = today.getMonth() - birthDate.getMonth();
+                var da = today.getDate() - birthDate.getDate();
+                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+                if(m<0){
+                    m +=12;
+                }
+                if(da<0){
+                    da +=30;
+                }
+
+                if(age < 18 || age > 80)
+                {
+                   // alert("Age "+age+" is restrict");
+                    return false;
+
+                } else {
+
+                  //  alert("Age "+age+" is allowed");
+                    return true;
+                }
+            }
+        }
+
         function pworkers(){
             $.ajax({
                 type:"GET",
@@ -845,6 +877,7 @@
                 birthDate: {
                     required: true,
 
+
                 },entryDate: {
                     required: true,
 
@@ -915,62 +948,69 @@
                 },
 
             },submitHandler: function(form) {
+               if(!getAge()){
+                   Swal.fire({
+                       position: 'top-end',
+                       icon: 'error',
+                       title: "العمر المدخل اقل من 18 عام",
+                       showConfirmButton: false,
+                       timer: 1500
+                   })
+               }else{
+                   var formData = new FormData($('.add_farmer')[0]);
+                   $.ajaxSetup({
+                       headers: {
+                           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                       }
+                   });
+                   $.ajax({
+                       type: 'post',
+                       enctype: 'multipart/form-data',
+                       url: "{{route('createFarmer')}}",
+                       data: formData,
+                       processData: false,
+                       contentType: false,
+                       cache: false,
+                       success: function (data) {
+                           if (data.status == 200) {
+                               $('#display_error').html("");
+                               $('#display_error').addClass('alert alert-danger');
+                               $.each(data.errors, function (key, err_value) {
+                                   $('#display_error').append('<li >' + err_value + '</li>');
+                               });
+                           }
+                           else if(data.status == 400){
+                               latestFarmer();
+                               Swal.fire({
+                                   position: 'top-end',
+                                   icon: 'success',
+                                   title: data.msg,
+                                   showConfirmButton: false,
+                                   timer: 1500
+                               })
+                               $('#kt_form').find('input').val('');
+                               $('#display_error').hide();
+                               location.reload();
+                           }else {
+                               latestFarmer();
+                               Swal.fire({
+                                   position: 'top-end',
+                                   icon: 'error',
+                                   title: data.msg,
+                                   showConfirmButton: false,
+                                   timer: 1500
+                               })
+                           }
+                       }
 
 
-                var formData = new FormData($('.add_farmer')[0]);
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                $.ajax({
-                    type: 'post',
-                    enctype: 'multipart/form-data',
-                    url: "{{route('createFarmer')}}",
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    cache: false,
-                    success: function (data) {
-                        if (data.status == 200) {
-                            $('#display_error').html("");
-                            $('#display_error').addClass('alert alert-danger');
-                            $.each(data.errors, function (key, err_value) {
-                                $('#display_error').append('<li >' + err_value + '</li>');
-                            });
-                        }
-                        else if(data.status == 400){
-                            latestFarmer();
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'success',
-                                title: data.msg,
-                                showConfirmButton: false,
-                                timer: 1500
-                            })
-                            $('#kt_form').find('input').val('');
-                            $('#display_error').hide();
-                            location.reload();
-                        }else {
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'error',
-                                title: data.msg,
-                                showConfirmButton: false,
-                                timer: 1500
-                            })
-                        }
-                    }
+                   });
 
-
-                });
+               }
 
             }
-            ,
-            // errorPlacement: function(error, element) {
-            //     element.css('background', '#ffdddd');
-            //     error.insertAfter(element);
-            // }
+
+
         });
 
         $("#equipment").validate({
