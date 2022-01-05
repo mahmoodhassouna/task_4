@@ -1,0 +1,2331 @@
+{
+	"info": {
+		"_postman_id": "3b2358e8-d9ab-4894-9730-7eab46b4cbaf",
+		"name": "task_4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "mahmoud hassouna",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mahmoud@text.ps",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1290tr922",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|ETtLsBUq7ugOhdEo7K8pkjOkgIThc6fH6dreZVgl",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Farmer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idNumber",
+							"value": "123456788",
+							"description": "1-9 digits unique",
+							"type": "text"
+						},
+						{
+							"key": "cardNumber",
+							"value": "123456",
+							"description": "unique ",
+							"type": "text"
+						},
+						{
+							"key": "fName",
+							"value": "mahmoud ",
+							"type": "text"
+						},
+						{
+							"key": "gName",
+							"value": "bader",
+							"type": "text"
+						},
+						{
+							"key": "mName",
+							"value": "jawad",
+							"type": "text"
+						},
+						{
+							"key": "lName",
+							"value": "hassouna",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "10\\11\\1999",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "0594037345",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mahmoud@soft.com",
+							"type": "text"
+						},
+						{
+							"key": "governorate_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "region_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "guide",
+							"value": "مسجد الهدايا",
+							"type": "text"
+						},
+						{
+							"key": "socialState",
+							"value": "اعزب",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "ذكر",
+							"type": "text"
+						},
+						{
+							"key": "qualifications",
+							"value": "بكالوريس",
+							"type": "text"
+						},
+						{
+							"key": "entryDate",
+							"value": "12\\20\\1555",
+							"description": "date",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/farmer",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"farmer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Latest Farmer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/latestFarmer",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"latestFarmer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Farmer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idNumber",
+							"value": "123456788",
+							"type": "text"
+						},
+						{
+							"key": "cardNumber",
+							"value": "123422",
+							"type": "text"
+						},
+						{
+							"key": "fName",
+							"value": "ؤ]ُسب",
+							"type": "text"
+						},
+						{
+							"key": "gName",
+							"value": "يؤثصٍيؤ",
+							"type": "text"
+						},
+						{
+							"key": "mName",
+							"value": "سيؤيس",
+							"type": "text"
+						},
+						{
+							"key": "lName",
+							"value": "يسؤيسؤيس",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "10/11/1888",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "8943763256",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "msdcd@jksfef.com",
+							"type": "text"
+						},
+						{
+							"key": "governorate_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "region_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "guide",
+							"value": "تل الهوا",
+							"type": "text"
+						},
+						{
+							"key": "socialState",
+							"value": "متزوج",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "انثى",
+							"type": "text"
+						},
+						{
+							"key": "qualifications",
+							"value": "بكالوريس",
+							"type": "text"
+						},
+						{
+							"key": "entryDate",
+							"value": "23/33/3233",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/update/farmer/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"update",
+						"farmer",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Farmer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/delete-farmer/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-farmer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Archive Farmer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/arch-farmer/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"arch-farmer",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Un Archive Farmer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/un-archive-farmer/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"un-archive-farmer",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Archive Farmer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/delete-archiveFarmer/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-archiveFarmer",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Archive Farmer Table",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/archiveFarmersTable",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"archiveFarmersTable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Farmers Table",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/archiveFarmersTable",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"archiveFarmersTable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lands for Farmer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/lands-farmer",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"lands-farmer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lands for Farmer use Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/landsFarmer/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"landsFarmer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Latest Land",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/latestLand",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"latestLand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Land",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/delete-land/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-land",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete per_worker",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/delete-pworkers/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-pworkers",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Vegetable",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/delete-vegetable/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-vegetable",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Tree",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/delete-tree/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-tree",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Land",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idNumber",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "idNumber2",
+							"value": "888888888",
+							"type": "text"
+						},
+						{
+							"key": "farmer_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "pieceNumber",
+							"value": "22332",
+							"type": "text"
+						},
+						{
+							"key": "voucherNumber",
+							"value": "23232",
+							"type": "text"
+						},
+						{
+							"key": "areaBuildingTenurePurposes",
+							"value": "23",
+							"type": "text"
+						},
+						{
+							"key": "areaBuildingNonTenurePurposes",
+							"value": "23",
+							"type": "text"
+						},
+						{
+							"key": "permanentFallowArea",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "temporaryFallowSpace",
+							"value": "32",
+							"type": "text"
+						},
+						{
+							"key": "cultivatedLandArea",
+							"value": "23",
+							"type": "text"
+						},
+						{
+							"key": "areaForestTrees",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "totalLandArea",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "farFromArmisticeLine",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "typeOfContract",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "region_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ownerType",
+							"value": "ملك",
+							"type": "text"
+						},
+						{
+							"key": "owner",
+							"value": "احمد محمد",
+							"type": "text"
+						},
+						{
+							"key": "fName",
+							"value": "ففق",
+							"type": "text"
+						},
+						{
+							"key": "gName",
+							"value": "قففق",
+							"type": "text"
+						},
+						{
+							"key": "mName",
+							"value": "قففق",
+							"type": "text"
+						},
+						{
+							"key": "lName",
+							"value": "فقفق",
+							"type": "text"
+						},
+						{
+							"key": "guide",
+							"value": "قففق",
+							"type": "text"
+						},
+						{
+							"key": "notes",
+							"value": "فققففقفقفققففقففقفقفقففق",
+							"type": "text"
+						},
+						{
+							"key": "governorate_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/land",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"land"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Application",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "farmer_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "productionCapacity",
+							"value": "",
+							"description": "nullablel",
+							"type": "text"
+						},
+						{
+							"key": "q1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "q2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "q3",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "q4",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "q5",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "q6",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "q7",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "q8",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "q9",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "q10",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "q11",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "q12",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/application",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Building",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ownerBuild",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/buildings",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"buildings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Other",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "farmerType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "notes",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/other",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"other"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Irrigation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "wellNumber",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "electricity",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "energy",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "depth",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "depthWellMeter",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "height",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "capacity",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/irrigation",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"irrigation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Cattle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "farmerType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "roof",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/cattle",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"cattle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create per_worker",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "farmerType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "roof",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/per_worker?address&phone&gender&name&idNumber&farmer_id",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"per_worker"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": null
+						},
+						{
+							"key": "phone",
+							"value": null
+						},
+						{
+							"key": "gender",
+							"value": null
+						},
+						{
+							"key": "name",
+							"value": null
+						},
+						{
+							"key": "idNumber",
+							"value": null
+						},
+						{
+							"key": "farmer_id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Poultry",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "farmerType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "roof",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/per_worker?number&roof&farmerType&area&land_id&type",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"per_worker"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": null
+						},
+						{
+							"key": "roof",
+							"value": null
+						},
+						{
+							"key": "farmerType",
+							"value": null
+						},
+						{
+							"key": "area",
+							"value": null
+						},
+						{
+							"key": "land_id",
+							"value": null
+						},
+						{
+							"key": "type",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Crop",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "farmerType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "roof",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/crops?land_id&item&agricultureHistory&cultivatedArea&crop&irrigationMethod&depression&causeDepression&endDate",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"crops"
+					],
+					"query": [
+						{
+							"key": "land_id",
+							"value": null
+						},
+						{
+							"key": "item",
+							"value": null
+						},
+						{
+							"key": "agricultureHistory",
+							"value": null
+						},
+						{
+							"key": "cultivatedArea",
+							"value": null
+						},
+						{
+							"key": "crop",
+							"value": null
+						},
+						{
+							"key": "irrigationMethod",
+							"value": null
+						},
+						{
+							"key": "depression",
+							"value": null
+						},
+						{
+							"key": "causeDepression",
+							"value": null
+						},
+						{
+							"key": "endDate",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Partner",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idNumber",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "partnershipRatio",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "partnerType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/partner",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"partner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Tree",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "item",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/tree",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"tree"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Equipments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "farmerType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "roof",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/equipment?notes&farmer_id&number&propertyType&machine",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"equipment"
+					],
+					"query": [
+						{
+							"key": "notes",
+							"value": null
+						},
+						{
+							"key": "farmer_id",
+							"value": null
+						},
+						{
+							"key": "number",
+							"value": null
+						},
+						{
+							"key": "propertyType",
+							"value": null
+						},
+						{
+							"key": "machine",
+							"value": null
+						},
+						{
+							"key": "propertyType",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Vegetable",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "item",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/create/vegetable",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"vegetable"
+					],
+					"query": [
+						{
+							"key": "propertyType",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Cattle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ownerBuild",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/delete-cattle/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-cattle",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Partner",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ownerBuild",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/delete-partner/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-partner",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Irrigation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ownerBuild",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/delete-irrigation/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-irrigation",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Poultry",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ownerBuild",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/delete-poultry/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-poultry",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Other",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ownerBuild",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/delete-other/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-other",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Crop",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ownerBuild",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/delete-crops/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-crops",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Buildings",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ownerBuild",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/delete-buildings/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-buildings",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Equipment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|xc2w6OztcERbYcKZ7lUB9I8SvrBzjiehiTzkMIKC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ownerBuild",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "land_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/delete-equipment/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete-equipment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
